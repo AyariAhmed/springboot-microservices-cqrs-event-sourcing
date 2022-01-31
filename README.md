@@ -4,14 +4,16 @@
 - [docker engine](https://docs.docker.com/engine/install/)
 - [docker compose](https://docs.docker.com/compose/install/)
  > Spin up the development environment through: `docker-compose up -d`
-<br/>
+
  > Start the project through starting all the defined microservices (starting with config-server)
 
 ### API documentation:
 - Add product
 ```http request
-POST http://localhost:8080/command/create 
-  Request Body: 
+POST http://localhost:8080/command/create
+```
+Request Body: 
+```
   {
     "ref": "string",
     "name": "string",
@@ -19,7 +21,8 @@ POST http://localhost:8080/command/create
     "price": "number",
     "quantity": "integer"
   }
-```
+ ```
+
 - Buy Product
 ```http request
 POST http://localhost:8080/command/buy/<product-ref>
@@ -46,7 +49,11 @@ DELETE localhost:8080/command/purge
 ```
 
 ### Application Architecture
+![cqrs](https://user-images.githubusercontent.com/56363189/151734627-f1bf0736-cc05-4708-bbc8-529b933b4df7.png)
 
 
 ### Service registry (Eureka server)
+![Screen Shot 2022-01-31 at 3 02 33 AM](https://user-images.githubusercontent.com/56363189/151732207-15630ad5-c067-41a4-8ef2-f4dbaede84f7.png)
 
+### Config Server
+[Github repository](https://github.com/AyariAhmed/springboot-microservices-config-server) containing the microservices configuration.
