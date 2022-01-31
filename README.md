@@ -3,15 +3,15 @@
 - [jdk 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
 - [docker engine](https://docs.docker.com/engine/install/)
 - [docker compose](https://docs.docker.com/compose/install/)
- > -Spin up the development environment through: `docker-compose up -d`
+ > Spin up the development environment through: `docker-compose up -d`
 <br/>
- > -Start the project through starting all the defined microservices (starting with config-server)
+ > Start the project through starting all the defined microservices (starting with config-server)
 
 ### API documentation:
 - Add product
 ```http request
 POST http://localhost:8080/command/create 
-Request Body: 
+  Request Body: 
   {
     "ref": "string",
     "name": "string",
@@ -46,4 +46,7 @@ DELETE localhost:8080/command/purge
 ```
 
 ### Application Architecture
+
+
+### Service registry (Eureka server)
 
