@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: query-service
+
+
+server:
+  port: 8082

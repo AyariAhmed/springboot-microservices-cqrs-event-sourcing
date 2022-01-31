@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888
+    compatibility-verifier:
+      enabled: false

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: command-service
+
+server:
+  port: 8081

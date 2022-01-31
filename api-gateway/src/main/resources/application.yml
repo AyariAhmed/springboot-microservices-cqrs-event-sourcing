@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: apigateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: query-service
+          uri: lb://QUERY-SERVICE
+          predicates:
+            - Path=/query/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: queryCircuitBreaker
+                fallbackUri: forward:/queryFallBack
+        - id: command-service
+          uri: lb://COMMAND-SERVICE
+          predicates:
+            - Path=/command/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: commandCircuitBreaker
+                fallbackUri: forward:/commandFallBack
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+server:
+  port: 8080

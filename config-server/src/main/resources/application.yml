@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AyariAhmed/springboot-microservices-config-server
+          clone-on-start: true
+          default-label: main
+          skip-ssl-validation: true
